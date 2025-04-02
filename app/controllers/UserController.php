@@ -26,7 +26,7 @@ class UserController {
         }
     }
 
-    public function uploadProfilePicture() {
+    public function uploadProfilePicture(){
         if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0) {
             $id = $_POST['id'];
             $targetDir = "uploads/";

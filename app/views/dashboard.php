@@ -38,16 +38,16 @@ if (!isset($_SESSION['user_id'])) {
                         <a href="show.php"><i class="fa-solid fa-theater-masks"></i> Shows</a>
                     </li>
                     <li>
-                        <a href="settings.php"><i class="fa-solid fa-gear"></i> Settings</a>
+                        <a href="user_form.php"><i class="fa-solid fa-gear"></i> Settings</a>
                     </li>
-                    <li class="selected"><a href="dashboard.php">Home</a></li>
-                    <li><a href="workshop.php">Workshops</a></li>
-                    <li><a href="show.php">Shows</a></li>
-                    <li><a href="user_form.php">Settings</a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="logout.php">Se déconnecter</a>
+                    </li>
                 </ul>
             </nav>
         </aside>
-        <a href="logout.php">Se déconnecter</a>
     </header>
     <main>
         <?php
