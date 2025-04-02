@@ -7,18 +7,21 @@ ini_set('display_errors', 1);
 session_start();
 require_once __DIR__ . '/../models/User.php';
 
-class AuthController {
+class AuthController
+{
     private $userModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->userModel = new User();
     }
 
-    public function login() {
+    public function login()
+    {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = trim($_POST['email']);
             $password = trim($_POST['password']);
-            
+
 
             if (!empty($email) && !empty($password)) {
                 $user = $this->userModel->authenticate($email, $password);
@@ -28,6 +31,7 @@ class AuthController {
                     $_SESSION['email'] = $user['mail'];
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['firstname'] = $user['firstname'];
+                    $_SESSION['role'] = $user['role'];
 
                     header("Location: ../views/dashboard.php");
                     exit();
@@ -42,7 +46,8 @@ class AuthController {
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_start();
         session_destroy();
         header("Location: /login.php");
