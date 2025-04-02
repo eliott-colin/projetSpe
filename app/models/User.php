@@ -1,10 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-?>
 
-
-<?php
 require_once __DIR__ . '/../../config/database.php';
 
 class User
@@ -30,6 +27,30 @@ class User
         //     return $user; // Retourne l'utilisateur si l'authentification est réussie
         // }
         // return false;
+    }
+
+    public function getUserById($id) {
+        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateUser($id, $nom, $prenom, $email) {
+        $stmt = $this->db->prepare("UPDATE users SET nom = :nom, prenom = :prenom, mail = :email WHERE id = :id");
+        return $stmt->execute([
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'email' => $email,
+            'id' => $id
+        ]);
+    }
+
+    public function updateProfilePicture($id, $imagePath) {
+        $stmt = $this->db->prepare("UPDATE users SET profile_picture = :profile_picture WHERE id = :id");
+        return $stmt->execute([
+            'profile_picture' => $imagePath,
+            'id' => $id
+        ]);
     }
 }
 ?>

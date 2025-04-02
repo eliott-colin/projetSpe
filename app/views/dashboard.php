@@ -14,13 +14,15 @@ if (!isset($_SESSION['user_id'])) {
     <title>Tableau de bord</title>
     <link rel="stylesheet" href="../assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/style.css">
 </head>
 
 <body>
     <header>
         <aside class="sidebar">
             <div class="profile">
-                <img src="image.png" alt="Profile Picture">
+                <img src="../assets/img/<?php echo $_SESSION['photo'] ?: 'default.png'; ?>" alt="Profile Picture">
                 <p class="name"><?php echo $_SESSION['name'] . " " . $_SESSION['firstname']; ?></p>
                 <p class="mail"><?php echo $_SESSION['email']; ?></p>
             </div>
@@ -38,9 +40,14 @@ if (!isset($_SESSION['user_id'])) {
                     <li>
                         <a href="settings.php"><i class="fa-solid fa-gear"></i> Settings</a>
                     </li>
+                    <li class="selected"><a href="dashboard.php">Home</a></li>
+                    <li><a href="workshop.php">Workshops</a></li>
+                    <li><a href="show.php">Shows</a></li>
+                    <li><a href="user_form.php">Settings</a></li>
                 </ul>
             </nav>
         </aside>
+        <a href="logout.php">Se déconnecter</a>
     </header>
     <main>
         <?php

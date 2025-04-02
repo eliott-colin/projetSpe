@@ -32,6 +32,7 @@ class AuthController
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['firstname'] = $user['firstname'];
                     $_SESSION['role'] = $user['role'];
+                    $_SESSION['photo'] = $user['photo'];
 
                     header("Location: ../views/dashboard.php");
                     exit();
@@ -50,7 +51,7 @@ class AuthController
     {
         session_start();
         session_destroy();
-        header("Location: /login.php");
+        header("Location: ../../public/index.php");
         exit();
     }
 }
