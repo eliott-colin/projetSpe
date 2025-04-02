@@ -28,6 +28,7 @@ class AuthController {
                     $_SESSION['email'] = $user['mail'];
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['firstname'] = $user['firstname'];
+                    $_SESSION['photo'] = $user['photo'];
 
                     header("Location: ../views/dashboard.php");
                     exit();
@@ -45,7 +46,7 @@ class AuthController {
     public function logout() {
         session_start();
         session_destroy();
-        header("Location: /login.php");
+        header("Location: ../../public/index.php");
         exit();
     }
 }
