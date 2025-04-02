@@ -19,12 +19,12 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .profile {
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 80%;
 }
 
 .profile img {
@@ -79,4 +79,8 @@ main {
     padding: 40px;
     background-color: #e0e0e0;
     color: black;
+}
+
+.logout {
+    margin-top: 200%;
 }
