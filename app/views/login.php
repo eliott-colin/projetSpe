@@ -1,8 +1,5 @@
 <?php
-
-
 require_once '../controllers/AuthController.php';
-var_dump("test");
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $auth = new AuthController();
     $auth->login();
