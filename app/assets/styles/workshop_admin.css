@@ -1,0 +1,75 @@
+
+body {
+    background-color: #8a89a3;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #f4a200;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border: 4px solid #004080;
+    position: relative;
+}
+
+.modify-text {
+    font-weight: bold;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.modify {
+    background-color: #ffd580;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.delete {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.workshops {
+    background-color: #00234a;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+}
+
+.workshop-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workshop-item {
+    background-color: #ffcc80;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
