@@ -1,19 +1,35 @@
 <?php
 require_once __DIR__ . '/../models/User.php';
 
-class UserController {
+class UserController
+{
     private $userModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->userModel = new User();
     }
 
-    public function editUserForm($id) {
+    public function editUserForm($id)
+    {
         $user = $this->userModel->getUserById($id);
         require_once __DIR__ . '/../views/user_form.php';
     }
 
-    public function updateUser() {
+    public function getUserCount()
+    {
+        $number = $this->userModel->getUserCount();
+        require_once __DIR__ . '/../views/dashboard.php';
+        return $number["nombre"];
+    }
+    public function getAllUsers()
+    {
+        $users = $this->userModel->getAllUsers();
+        require_once __DIR__ . '/../views/dashboard.php';
+        return $users;
+    }
+    public function updateUser()
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'];
             $nom = $_POST['nom'];
@@ -26,7 +42,8 @@ class UserController {
         }
     }
 
-    public function uploadProfilePicture() {
+    public function uploadProfilePicture()
+    {
         if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0) {
             $id = $_POST['id'];
             $targetDir = "uploads/";
