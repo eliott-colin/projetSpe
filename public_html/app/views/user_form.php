@@ -14,21 +14,25 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <div class="user-container">
-        <h2>Informations Utilisateur</h2>
+        <h2>Paramètres utilisateur</h2>
 
-        <form action="user_update.php" method="POST">
+        <form action="#" method="POST">
             <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
 
             <label>Nom</label>
-            <input type="text" name="nom" value="<?= htmlspecialchars($user['nom']) ?>" required>
+            <input type="text" name="nom" value="<?php echo $_SESSION['name']; htmlspecialchars($user['name']) ?>" required>
 
             <label>Prénom</label>
-            <input type="text" name="prenom" value="<?= htmlspecialchars($user['prenom']) ?>" required>
+            <input type="text" name="prenom" value="<?php echo $_SESSION['firstname']; htmlspecialchars($user['prenom']) ?>" required>
 
             <label>E-mail</label>
-            <input type="email" name="email" value="<?= htmlspecialchars($user['mail']) ?>" required>
+            <?php
+            $code = rand(100000, 999999);
 
-            <div class="profile-section">
+            // mail('eliottco33@gmail.com', 'Votre code de vérification est : '.$code ,) ?>
+            <button type="submit">Enregistrer</button>
+
+            <!-- <div class="profile-section">
                 <img src="<?= htmlspecialchars($user['profile_picture'] ?? 'default.png') ?>" alt="Profile" class="profile-img">
                 <form action="profile_upload.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
@@ -39,9 +43,9 @@ if (!isset($_SESSION['user_id'])) {
                     <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
                     <button type="submit">Supprimer</button>
                 </form>
-            </div>
+            </div> -->
 
-            <button type="submit">Enregistrer</button>
+            
         </form>
     </div>
 </body>
