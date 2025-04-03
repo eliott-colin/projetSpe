@@ -29,13 +29,27 @@ class User
         // return false;
     }
 
-    public function getUserById($id) {
+    public function getUserById($id)
+    {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE id = :id");
         $stmt->execute(['id' => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function getAllUsers()
+    {
+        $stmt = $this->db->prepare("SELECT id_user, name, firstname FROM users");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getUserCount()
+    {
+        $stmt = $this->db->prepare("SELECT count(*) as nombre FROM users");
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
-    public function updateUser($id, $nom, $prenom, $email) {
+    public function updateUser($id, $nom, $prenom, $email)
+    {
         $stmt = $this->db->prepare("UPDATE users SET nom = :nom, prenom = :prenom, mail = :email WHERE id = :id");
         return $stmt->execute([
             'nom' => $nom,
@@ -45,7 +59,8 @@ class User
         ]);
     }
 
-    public function updateProfilePicture($id, $imagePath) {
+    public function updateProfilePicture($id, $imagePath)
+    {
         $stmt = $this->db->prepare("UPDATE users SET profile_picture = :profile_picture WHERE id = :id");
         return $stmt->execute([
             'profile_picture' => $imagePath,
