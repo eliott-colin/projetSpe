@@ -14,9 +14,9 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord</title>
-    <link rel="stylesheet" href="../assets/styles/dashboard.css">
+    <link rel="stylesheet" href="../assets/styles/dashboard-admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../assets/styles/sidebar.css">
+    <title>Document</title>
 </head>
 
 <body>
@@ -27,25 +27,31 @@ if (!isset($_SESSION['user_id'])) {
                 <p class="name"><?php echo $_SESSION['name'] . " " . $_SESSION['firstname']; ?></p>
                 <p class="mail"><?php echo $_SESSION['email']; ?></p>
             </div>
-            <nav>
-                <ul>
-                    <li class="selected">
-                        <a href="dashboard.php"><i class="fa-solid fa-house"></i> Home</a>
-                    </li>
-                    <li>
-                        <a href="workshop.php"><i class="fa-solid fa-chalkboard-teacher"></i> Workshops</a>
-                    </li>
-                    <li>
-                        <a href="show.php"><i class="fa-solid fa-theater-masks"></i> Shows</a>
-                    </li>
-                    <li>
-                        <a href="user_form.php"><i class="fa-solid fa-gear"></i> Settings</a>
-                    </li>
-                </ul>
-                <ul class="logout">
-                    <li><a href="logout.php">Se déconnecter</a></li>
-                </ul>
-            </nav>
+            <div class="container-nav">
+                <nav>
+                    <ul>
+                        <li class="selected">
+                            <a href="dashboard.php"><i class="fa-solid fa-house"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="workshop.php"><i class="fa-solid fa-chalkboard-teacher"></i> Workshops</a>
+                        </li>
+                        <li>
+                            <a href="show.php"><i class="fa-solid fa-theater-masks"></i> Shows</a>
+                        </li>
+                        <li>
+                            <a href="user_form.php"><i class="fa-solid fa-gear"></i> Settings</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="logout.php">Se déconnecter</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </aside>
     </header>
     <main>
