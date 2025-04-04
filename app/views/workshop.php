@@ -16,10 +16,11 @@ if (!isset($_SESSION['user_id'])) {
     <title>Workshop</title>
     <link rel="stylesheet" href="../assets/styles/workshop_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/sidebar.css">
 </head>
 
 <body>
-    <header>
+<header>
         <aside class="sidebar">
             <div class="profile">
                 <img src="../assets/img/<?php echo $_SESSION['photo'] ?: 'default.png'; ?>" alt="Profile Picture">
@@ -28,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             <nav>
                 <ul>
-                    <li class="">
+                    <li>
                         <a href="dashboard.php"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="selected">

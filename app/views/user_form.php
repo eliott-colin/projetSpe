@@ -12,9 +12,10 @@ if (!isset($_SESSION['user_id'])) {
     <title>Informations Utilisateur</title>
     <link rel="stylesheet" href="../assets/styles/sidebar.css">
     <link rel="stylesheet" href="../assets/styles/user_form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
+<header>
         <aside class="sidebar">
             <div class="profile">
                 <img src="../assets/img/<?php echo $_SESSION['photo'] ?: 'default.png'; ?>" alt="Profile Picture">
@@ -23,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             <nav>
                 <ul>
-                    <li class="selected">
+                    <li>
                         <a href="dashboard.php"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li>
@@ -32,14 +33,12 @@ if (!isset($_SESSION['user_id'])) {
                     <li>
                         <a href="show.php"><i class="fa-solid fa-theater-masks"></i> Shows</a>
                     </li>
-                    <li>
+                    <li class="selected">
                         <a href="user_form.php"><i class="fa-solid fa-gear"></i> Settings</a>
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <a href="logout.php">Se déconnecter</a>
-                    </li>
+                <ul class="logout">
+                    <li><a href="logout.php">Se déconnecter</a></li>
                 </ul>
             </nav>
         </aside>
