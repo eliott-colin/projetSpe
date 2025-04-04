@@ -22,11 +22,17 @@ class UserController
         require_once __DIR__ . '/../views/dashboard.php';
         return $number["nombre"];
     }
+
     public function getAllUsers()
     {
         $users = $this->userModel->getAllUsers();
         require_once __DIR__ . '/../views/dashboard.php';
         return $users;
+    }
+
+    public function getUserById($id)
+    {
+        return $this->userModel->getUserById($id);
     }
     public function updateUser()
     {
@@ -41,7 +47,8 @@ class UserController
             }
         }
     }
-    public function uploadProfilePicture(){
+    public function uploadProfilePicture()
+    {
         if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0) {
             $id = $_POST['id'];
             $targetDir = "uploads/";
