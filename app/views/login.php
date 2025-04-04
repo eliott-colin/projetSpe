@@ -10,24 +10,26 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 <?php if (isset($_GET['error'])): ?>
     <p style="color: red;">
-        <?php 
-            if ($_GET['error'] == "invalid_credentials") {
-                echo "Email ou mot de passe incorrect.";
-            } elseif ($_GET['error'] == "missing_fields") {
-                echo "Veuillez remplir tous les champs.";
-            }
+        <?php
+        if ($_GET['error'] == "invalid_credentials") {
+            echo "Email ou mot de passe incorrect.";
+        } elseif ($_GET['error'] == "missing_fields") {
+            echo "Veuillez remplir tous les champs.";
+        }
         ?>
     </p>
 <?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page de connexion</title>
     <link rel="stylesheet" href="../assets/styles/login.css">
 </head>
+
 <body>
     <main>
         <form method="POST" action="#" id="form-login">
@@ -42,8 +44,5 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         </form>
     </main>
 </body>
+
 </html>
-
-
-
-
