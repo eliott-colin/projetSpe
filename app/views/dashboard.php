@@ -21,7 +21,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-<header>
+    <header>
         <aside class="sidebar">
             <div class="profile">
                 <img src="../assets/img/<?php echo $_SESSION['photo'] ?: 'default.png'; ?>" alt="Profile Picture">
@@ -58,7 +58,6 @@ if (!isset($_SESSION['user_id'])) {
             $workshop = new WorkshopController();
             require_once '../controllers/UserController.php';
             $user = new UserController();
-            var_dump($user->getAllUsers());
             echo '<select class="optionUser hidden" name="user">';
             foreach ($user->getAllUsers() as $userData) {
                 $id = htmlspecialchars($userData['id_user']);
@@ -80,7 +79,6 @@ if (!isset($_SESSION['user_id'])) {
             $test = true;
             echo "
                 <h1>Dashboard Admin</h1>
-                <p>Bienvenue {$_SESSION['name']} {$_SESSION['firstname']} !</p>
                 <section class='topContainer'>
                     <div class='ticketContainer'>
                         <div class='rondContainer'>

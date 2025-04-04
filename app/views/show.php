@@ -32,10 +32,10 @@ if (!isset($_SESSION['user_id'])) {
                     <li>
                         <a href="dashboard.php"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
-                    <li class="selected">
+                    <li>
                         <a href="workshop.php"><i class="fa-solid fa-chalkboard-teacher"></i> Workshops</a>
                     </li>
-                    <li>
+                    <li class="selected">
                         <a href="show.php"><i class="fa-solid fa-theater-masks"></i> Shows</a>
                     </li>
                     <li>
@@ -60,29 +60,21 @@ if (!isset($_SESSION['user_id'])) {
             echo "
     <div class='container'>
         <div class='card'>
-            <p class='modify-text'>Voulez vous modifier ?</p>
-            <h2>Improvisation Paroles</h2>
-            <p class='description'>Lorem ipsum dolor sit amet. Lorem impzz</p>
-            <p class='date'>📅 12/03/2028 - 12h34</p>
-            <p class='location'>📍 Paris</p>
-            <div class='buttons'>
-                <button class='modify'>Modifier</button>
-                <button class='delete'>Supprimer</button>
-            </div>
+            <h2>To do</h2>
         </div>
         <div class='workshops'>
             <div class='headerContainer'>
             <i class='fa-solid fa-arrow-left'></i>
-            <h2>Nos Ateliers</h2>
+            <h2>Nos Spectacles</h2>
             <i class='fa-solid fa-arrow-right'></i>
             </div>
             <p class='month'>MARS - 2028</p>
             <div class='workshop-list'>
-                <button class='workshop-item'>12/03/2028 - Paris - Improvisation Paroles</button>
-                <button class='workshop-item'>12/03/2028 - Paris - Improvisation Paroles</button>
-                <button class='workshop-item'>12/03/2028 - Paris - Improvisation Paroles</button>
-                <button class='workshop-item'>12/03/2028 - Paris - Improvisation Paroles</button>
-                <button class='workshop-item'>12/03/2028 - Paris - Improvisation Paroles</button>
+                <button class='workshop-item'>12/03/2028 - Paris - Roméo & Juliette</button>
+                <button class='workshop-item'>12/03/2028 - Paris - Roméo & Juliette</button>
+                <button class='workshop-item'>12/03/2028 - Paris - Roméo & Juliette</button>
+                <button class='workshop-item'>12/03/2028 - Paris - Roméo & Juliette</button>
+                <button class='workshop-item'>12/03/2028 - Paris - Roméo & Juliette</button>
             </div>
         </div>
     </div>

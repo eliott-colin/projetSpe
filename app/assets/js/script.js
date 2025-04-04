@@ -24,8 +24,8 @@ let formSpectacle = `
                 <textarea name="description" required></textarea>
             </div>
             <div class="form-group">
-                <label>Catégorie</label>
-                <input type="text" name="categorie" required>
+                <label>Id Catégorie</label>
+                <input type="number" name="categorie" required>
             </div>
             <div class="button-container">
                 <button type="submit">Créer un spectacle</button>
@@ -55,8 +55,8 @@ let formWorkshop = `
             <textarea name="description" required></textarea>
         </div>
         <div class="form-group">
-            <label>Theme</label>
-            <input type="text" name="categorie" required>
+            <label>Id Theme</label>
+            <input type="number" name="categorie" required>
         </div>
         <div class="form-group">
             <label>Animé par</label>
