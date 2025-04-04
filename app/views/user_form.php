@@ -45,22 +45,24 @@ if (!isset($_SESSION['user_id'])) {
     </header>
     <main>
         <div class="user-container">
-            <h2>Informations Utilisateur</h2>
+            <div>
+                <h2>Informations Utilisateur</h2>
 
-            <form action="user_update.php" method="POST">
-                <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
+                <form action="user_update.php" method="POST">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
 
-                <label>Nom</label>
-                <input type="text" name="nom" value="<?= htmlspecialchars($user['nom']) ?>" required>
+                    <label>Nom</label>
+                    <input type="text" name="nom" value="<?= htmlspecialchars($user['nom']) ?>" required>
 
-                <label>Prénom</label>
-                <input type="text" name="prenom" value="<?= htmlspecialchars($user['prenom']) ?>" required>
+                    <label>Prénom</label>
+                    <input type="text" name="prenom" value="<?= htmlspecialchars($user['prenom']) ?>" required>
 
-                <label>E-mail</label>
-                <input type="email" name="email" value="<?= htmlspecialchars($user['mail']) ?>" required>
+                    <label>E-mail</label>
+                    <input type="email" name="email" value="<?= htmlspecialchars($user['mail']) ?>" required>
+                </div>
 
                 <div class="profile-section">
-                    <img src="<?= htmlspecialchars($user['profile_picture'] ?? 'default.png') ?>" alt="Profile" class="profile-img">
+                    <img src="<?= htmlspecialchars($_SESSION['photo'] ?? 'default.png') ?>" alt="Profile" class="profile-img">
                     <form action="profile_upload.php" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($user['id']) ?>">
                         <input type="file" name="profile_image">
